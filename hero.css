@@ -1,0 +1,113 @@
+#hero{
+    
+    & header{
+        background: url(./assets/images/hero-background.png) no-repeat top / cover;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10.25rem;
+
+        padding-bottom: 29.375rem;
+ 
+
+        & nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3.5rem;
+            margin-inline: 10rem;
+
+            & img:nth-child(1){
+                display: none;
+            }
+
+            & a { /* Specific change in button */
+                width: fit-content;
+                padding-inline: 1.25rem;
+            }
+        }
+
+        & div{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            
+            margin-inline: auto;
+
+            gap: 2rem;
+            max-width: 41rem;
+
+
+            & p {
+                font-size: var(--tx-sm);
+                max-width: 80%;
+                margin-inline: auto;
+            }
+        }
+    }
+    
+    & #subtitle {   
+        padding: 6rem 7.5rem 5rem;
+        text-align: center;
+        & span {
+            width: 100%;
+            font-weight: 500;
+            font-size: var(--tx-md);
+            line-height: 200%;
+
+            & strong {
+                color: var(--blue-light);
+            }
+        }
+
+        & img {
+            width: 5rem;
+        }
+
+        & img:nth-child(1){
+            transform: rotate(30deg);
+        }
+
+        & img:nth-child(4){
+            transform: translateY(2rem);
+            transform: rotate(-20deg);
+        }
+    }
+}
+
+@media (width < 80em) {
+    #hero{
+
+        & header{
+            padding: 1.25rem 1.25rem 12rem;
+            gap: 3rem;
+
+            & nav {
+                margin: 0;
+
+                & img:nth-child(1){
+                    display: initial;
+                }
+
+                & img:nth-child(2){
+                    display: none;
+                }
+            }
+
+            & div p{
+                font-size: var(--tx-xs);
+            }
+        }
+
+        & #subtitle {
+
+            & img {
+                width: 2.5rem;
+            }
+
+            & span{
+                font-size: var(--tx-sm);
+            }
+        }
+    }
+}

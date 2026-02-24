@@ -40,9 +40,10 @@
 body{
     font-family: "Raleway", sans-serif;
     color: var(--tx-body);
+    background-color: var(--shape-bg);
 
     & h1 {
-        font-size: var(--tx-2xl);
+        font-size: var(--tx-lg);
         font-weight: 700;
         color: var(--tx-title);
     }
@@ -51,5 +52,17 @@ body{
         font-size: var(--tx-lg);
         font-weight: 700;
         color: var(--tx-title);
+    }
+
+    & a {
+        text-decoration: none;
+        color: var(--tx-title);
+        cursor: pointer;
+    }
+}
+
+@media (width < 80em) {
+    :root{
+        --tx-lg: 1.75rem;
     }
 }

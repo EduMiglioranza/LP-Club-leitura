@@ -1,0 +1,15 @@
+.button{
+    display: flex;
+    padding: .75rem;
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.btn-pink{
+    background-color: var(--pink-dark);
+}
+
+.btn-blue{
+    background-color: var(--blue-dark);
+}
+
