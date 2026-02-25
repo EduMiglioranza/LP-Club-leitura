@@ -29,7 +29,7 @@
 
     /* Typography */
     --tx-2xl: 3rem;
-    --tx-xl: 2.5rem;
+    --tx-xl: 2.25rem;
     --tx-lg: 2rem;
     --tx-md: 1.25rem;
     --tx-base: 1rem;
@@ -43,7 +43,7 @@ body{
     background-color: var(--shape-bg);
 
     & h1 {
-        font-size: var(--tx-lg);
+        font-size: var(--tx-xl);
         font-weight: 700;
         color: var(--tx-title);
     }
@@ -63,6 +63,7 @@ body{
 
 @media (width < 80em) {
     :root{
-        --tx-lg: 1.75rem;
+        --tx-xl: 1.75rem;
+        --tx-lg: 1.5rem;
     }
 }

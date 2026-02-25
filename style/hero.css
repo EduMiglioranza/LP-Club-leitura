@@ -55,7 +55,7 @@
             }
 
             & p {
-                font-size: var(--tx-sm);
+                font-size: var(--tx-base);
                 max-width: 80%;
                 margin-inline: auto;
 
