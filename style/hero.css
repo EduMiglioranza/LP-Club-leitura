@@ -16,7 +16,7 @@
             inset: 0;
             z-index: -1;
 
-            background: url(./assets/images/hero-background.png) no-repeat top / cover;
+            background: url(../assets/images/hero-background.png) no-repeat top / cover;
             opacity: 0;
 
             animation: fadeIN 900ms ease forwards;
@@ -74,85 +74,81 @@
             font-weight: 500;
             font-size: var(--tx-md);
             line-height: 200%;
-            color: var(--tx-title);
+            color: var(--tx-body);
+            opacity: .5;
 
             & strong {
-                color: var(--blue-light);
+                color: var(--tx-body);
             }
         }
 
         & span:nth-child(2){
-            animation: lightingUpWhite 2s ease both;
-            animation-timeline: view();
-            animation-range: 200px 350px;
-       
-
-            & strong {
-                animation: lightingUpBlue 2s 300ms ease both;
-                animation-timeline: view();
-                animation-range: 200px 350px;
+            transition: color 500ms, opacity 500ms;
+            & strong{
+                transition: color 500ms 100ms;
             }
         }
-
         & span:nth-child(3){
-            animation: lightingUpWhite 2s 600ms ease both;
-            animation-timeline: view();
-            animation-range: 200px 350px;
-       
+            transition: color 500ms 200ms, opacity 500ms 200ms;
 
-            & strong {
-                animation: lightingUpBlue 2s 800ms ease both;
-                animation-timeline: view();
-                animation-range: 200px 350px;
+            & strong{
+                transition: color 500ms 300ms;
             }
         }
-
         & span:nth-child(4){
-            animation: lightingUpWhite 2s 1s ease both;
-            animation-timeline: view();
-            animation-range: 200px 350px;
-       
-
-            & strong {
-                animation: lightingUpBlue 2s 1.2s ease both;
-                animation-timeline: view();
-                animation-range: 200px 350px;
+            transition: color 500ms 400ms, opacity 500ms 400ms;
+            & strong{
+                transition: color 500ms 500ms;
             }
         }
 
         & img {
             width: 5rem;
+            scale: 0;
         }
 
         & img:nth-child(1){
-            transform: rotate(30deg);
+            transition: scale 500ms ease, transform 500ms ease;
+            
         }
 
-        & img:nth-child(4){
-            transform: translateY(2rem);
-            transform: rotate(-20deg);
+        & img:nth-child(6){
+            transition: scale 500ms 300ms ease, transform 500ms 300ms ease;
+        }
+
+        /* Setting transition */
+
+        &:hover{
+            & span {
+                color: var(--tx-title);
+                opacity: 1;
+
+                & strong {
+                color: var(--blue-light);
+                }
+            }
+
+            & img{
+                scale: 1;
+
+                &:nth-child(1){
+                    transform: rotate(30deg);
+                }
+
+                &:nth-child(6){
+                    transform: rotate(-30deg);
+                }
+            }
         }
     }
 }
 
+
+/* Animation hero background */
 @keyframes fadeIN {
 
     to {
         opacity: 1;
-    }
-}
-
-@keyframes lightingUpWhite {
-
-    100% {
-        color: var(--tx-title);
-        opacity: 1;
-    }
-}
-
-@keyframes lightingUpBlue {
-    to {
-        color: var(--blue-light);
     }
 }
 
