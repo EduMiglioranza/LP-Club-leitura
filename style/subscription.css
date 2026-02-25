@@ -2,11 +2,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8.625rem;
+    gap: 3rem;
 
-    padding-block: 12.125rem 18.875rem;
+    padding-block: 6.5rem;
+    padding-left: 3.25rem;
+
+    & .container {
+        display: flex;
+        align-self: start;
+        gap: 1rem;
+
+        overflow: visible;
+        scrollbar-width: none;
+    }
+
+    /* & img:nth-child(2){
+        position: absolute;
+        top: 22rem;
+        left: 34rem;
+    } */
 
     & h2 {
         text-align: center;
     }
+
 }
