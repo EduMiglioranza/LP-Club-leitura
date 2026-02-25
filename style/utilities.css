@@ -1,0 +1,120 @@
+/* Buttons Settings and Animations */
+
+@property --circle-size { /* media querie adapts the animation of variables in css to all browsers. */ 
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+.button {
+  display: flex;
+  padding: .75rem;
+  width: 100%;
+  border-radius: .5rem;
+}
+
+.button[data-color="pink"] {
+  --circle-size: 0%;
+
+  background-image: radial-gradient(
+    circle at center,
+    var(--pink-base) var(--circle-size),
+    var(--pink-dark) var(--circle-size)
+  );
+
+  transition: --circle-size 1s ease;
+
+  &:hover{
+    --circle-size: 150%;
+  }
+}
+
+.button[data-color="blue"] {
+  --circle-size: 0%;
+
+  background-image: radial-gradient(
+    circle at center,
+    var(--blue-base) var(--circle-size),
+    var(--blue-dark) var(--circle-size)
+  );
+
+  transition: --circle-size 1s ease;
+
+  &:hover{
+    --circle-size: 150%;
+  }
+}
+
+/* Setting Cards */
+
+.card{
+  max-width: 18rem;
+  min-height: 26rem;
+  padding: 2rem 2rem 1.75rem;
+
+  background-color: var(--shape-base);
+
+  border-radius: 1.5rem;
+  border: 1px solid var(--shape-stroke);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: background-color 500ms ease;
+
+  & img{
+    max-width: .875rem;
+  }
+
+  & div:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+
+      & p{
+        font-size: var(--tx-sm);
+      }
+
+      & span{
+        display: flex;
+        align-items: end;
+        gap: .2rem;
+
+        & p{
+          font-size: var(--tx-base);
+        }
+      }
+    }
+    
+  }
+
+  & div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    & ul{
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+
+      & li {
+        display: flex;
+        gap: .5rem;
+
+        list-style: none;
+        font-size: var(--tx-sm);
+      }
+    }
+  }
+}
+
+.card:hover{
+  background-color: var(--shape-hover);
+}
