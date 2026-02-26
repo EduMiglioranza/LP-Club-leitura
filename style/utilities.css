@@ -61,7 +61,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  transition: background-color 500ms ease;
+  transition: background-color 500ms ease, transform 500ms ease, z-index 500ms ease;
 
   & img{
     max-width: .875rem;
@@ -94,7 +94,7 @@
     
   }
 
-  & div:nth-child(2){
+  & div + div{
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -117,4 +117,7 @@
 
 .card:hover{
   background-color: var(--shape-hover);
+  transform: translateY(-1rem);
+  z-index: 2;
 }
+

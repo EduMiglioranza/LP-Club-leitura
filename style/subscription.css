@@ -14,16 +14,190 @@
 
         overflow: visible;
         scrollbar-width: none;
+
+        & .animated_stars{
+            display: none;
+        }
+
+        & #rabbit{
+            display: none;
+        }
     }
 
-    /* & img:nth-child(2){
-        position: absolute;
-        top: 22rem;
-        left: 34rem;
-    } */
+    
 
     & h2 {
         text-align: center;
     }
 
+}
+
+@media (width >= 80em) {
+    #subscription{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8.625rem;
+
+        & .container{
+            align-self: inherit;
+            margin-bottom: 18.875rem;
+            position: relative;
+
+            .animated_stars{
+                display: inherit;
+                position: absolute;
+                display: flex;
+                
+
+                
+                &:nth-child(1){
+                    rotate: -75deg;
+                    gap: 1rem;
+
+                    animation: slideStar1 ease both;
+                    animation-timeline: view();
+                    animation-range: 100px 300px;
+                    
+                    & img:nth-child(1){
+                        width: 1.2rem;
+                        transition: rotate 500ms ease;
+                    }
+
+                    & img:nth-child(2){
+                        transition: rotate 500ms ease;
+                    }
+                    
+                }
+
+                &:nth-child(2){
+                    rotate: -10deg;
+                    gap: 1.5rem;
+
+                    animation: slideStar2 ease both;
+                    animation-timeline: view();
+                    animation-range: -300px 300px;
+
+                    & img:nth-child(1){
+                        width: 1.2rem;
+                        transition: rotate 500ms ease;
+                    }
+
+                    & img:nth-child(2){
+                        width: 1.8rem;
+                        transition: rotate 500ms ease;
+                    }
+                }
+            }
+
+            &:has(.secondary:hover) .main{
+                background-color: var(--shape-base);
+            }
+
+            &:has(.secondary:hover) .animated_stars{
+                &:nth-child(1){
+                    & img:nth-child(1){
+                        rotate: 30deg;
+                    }
+
+                    & img:nth-child(2){
+                        rotate: -15deg;
+                    }
+                }
+
+                &:nth-child(2){
+                    & img:nth-child(1){
+                        rotate: 30deg;
+                    }
+
+                    & img:nth-child(2){
+                        rotate: -15deg;
+                    }
+                }
+            }
+
+            & .main{
+                position: relative;
+                z-index: 1;
+                background-color: var(--shape-hover);
+
+                & #rabbit{
+                    display: inherit;
+                    position: absolute;
+                    top: -3.5rem;
+                    min-width: 3rem;
+                }
+            }
+
+            & .secondary{
+                position: absolute;
+                top: 0;
+                right: 0;
+                transition: transform 500ms ease, z-index 500ms ease;
+            }
+
+            & .secondary:nth-child(3){
+                animation: slideCard1 ease forwards;
+                animation-timeline: view();
+                animation-range: 100px 300px;
+            }
+
+            & .secondary:nth-child(5){
+                animation: slideCard2 ease forwards;
+                animation-timeline: view();
+                animation-range: 100px 300px;
+            }
+        }
+    }
+
+}
+
+@keyframes slideCard1 {
+    from {
+        top: 0;
+        right: 0;
+    }
+
+    to {
+        right: 18rem;
+        top: 4rem;
+        rotate: -8deg;
+    }
+}
+
+@keyframes slideCard2 {
+    from {
+        top: 0;
+        right: 0;
+    }
+
+    to {
+        right: -18rem;
+        top: 4rem;
+        rotate: 8deg;
+    }
+}
+
+@keyframes slideStar1 {
+    from {
+        top: -1rem;
+        left: -5rem;
+    }
+
+    to {
+        top: 3rem;
+        left: -23rem;
+    }
+}
+
+@keyframes slideStar2 {
+    from {
+        bottom: -5rem;
+        right: -5rem;
+    }
+
+    to {
+        bottom: -8rem;
+        right: -19rem;
+    }
 }
