@@ -22,6 +22,59 @@
         & #rabbit{
             display: none;
         }
+
+        & .main {
+
+            & div:nth-child(2){
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                & .popular {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    
+                    & span{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        background-color: var(--shape-stroke);
+                        border-radius: 80px;
+
+                        width: 5.625rem;
+                        height: 1.8rem;
+
+                        & p{
+                            font-weight: 700;
+                            font-size: var(--tx-xs);
+                        }
+                    }
+                }
+
+                & div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+
+                    & p{
+                        font-size: var(--tx-sm);
+                    }
+
+                    & span{
+                        display: flex;
+                        align-items: end;
+                        gap: .2rem;
+
+                        & p{
+                        font-size: var(--tx-base);
+                        }
+                    }
+                }
+                    
+            }
+        }
     }
 
     
